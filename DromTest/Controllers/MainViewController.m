@@ -6,17 +6,18 @@
 //  Copyright © 2019 Victor. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
+#import "Network.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    Network *network = [Network new];
 }
 
 
