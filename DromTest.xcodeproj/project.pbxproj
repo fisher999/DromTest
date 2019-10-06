@@ -15,6 +15,10 @@
 		570639842347A902007D1B60 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 570639832347A902007D1B60 /* Network.m */; };
 		5706398B2347BFD2007D1B60 /* MDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5706398A2347BFD2007D1B60 /* MDImage.m */; };
 		571BEDDD234895ED008051CA /* ImageDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDDC234895ED008051CA /* ImageDataStorage.m */; };
+		571BEDE02348AE90008051CA /* ImageNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDDF2348AE90008051CA /* ImageNetworkFetcher.m */; };
+		571BEDE62348BB85008051CA /* MainViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDE52348BB85008051CA /* MainViewPresenter.m */; };
+		571BEDEE2348DF1E008051CA /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDED2348DF1E008051CA /* ImageCell.m */; };
+		571BEDF72348FC0D008051CA /* MainViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDF62348FC0C008051CA /* MainViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,15 @@
 		5706398A2347BFD2007D1B60 /* MDImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDImage.m; sourceTree = "<group>"; };
 		571BEDDB234895DF008051CA /* ImageDataStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataStorage.h; sourceTree = "<group>"; };
 		571BEDDC234895ED008051CA /* ImageDataStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataStorage.m; sourceTree = "<group>"; };
+		571BEDDF2348AE90008051CA /* ImageNetworkFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageNetworkFetcher.m; sourceTree = "<group>"; };
+		571BEDE12348AEA1008051CA /* ImageNetworkFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageNetworkFetcher.h; sourceTree = "<group>"; };
+		571BEDE42348BB70008051CA /* MainViewPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewPresenter.h; sourceTree = "<group>"; };
+		571BEDE52348BB85008051CA /* MainViewPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewPresenter.m; sourceTree = "<group>"; };
+		571BEDEC2348DF1E008051CA /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		571BEDED2348DF1E008051CA /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		571BEDF32348E98D008051CA /* MainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		571BEDF52348FBFB008051CA /* MainViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewFlowLayout.h; sourceTree = "<group>"; };
+		571BEDF62348FC0C008051CA /* MainViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +118,7 @@
 		5706397F2347A7AF007D1B60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				570639692347A655007D1B60 /* MainViewController.h */,
-				5706396A2347A655007D1B60 /* MainViewController.m */,
+				571BEDE22348BB21008051CA /* MainViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,6 +126,7 @@
 		570639802347A8AC007D1B60 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				571BEDDE2348AE6A008051CA /* ImageNetworkFetcher */,
 				571BEDD6234882B5008051CA /* DataStorage */,
 				570639852347A912007D1B60 /* Network */,
 			);
@@ -153,6 +166,71 @@
 				571BEDDC234895ED008051CA /* ImageDataStorage.m */,
 			);
 			path = ImageDataStorage;
+			sourceTree = "<group>";
+		};
+		571BEDDE2348AE6A008051CA /* ImageNetworkFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				571BEDDF2348AE90008051CA /* ImageNetworkFetcher.m */,
+				571BEDE12348AEA1008051CA /* ImageNetworkFetcher.h */,
+			);
+			path = ImageNetworkFetcher;
+			sourceTree = "<group>";
+		};
+		571BEDE22348BB21008051CA /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				571BEDF42348FBE2008051CA /* FlowLayout */,
+				571BEDF12348E7ED008051CA /* View */,
+				571BEDEB2348DEF7008051CA /* ImageCell */,
+				571BEDE32348BB32008051CA /* Presenter */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		571BEDE32348BB32008051CA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				571BEDE42348BB70008051CA /* MainViewPresenter.h */,
+				571BEDE52348BB85008051CA /* MainViewPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		571BEDEB2348DEF7008051CA /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				571BEDEC2348DF1E008051CA /* ImageCell.h */,
+				571BEDED2348DF1E008051CA /* ImageCell.m */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		571BEDF12348E7ED008051CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				570639692347A655007D1B60 /* MainViewController.h */,
+				5706396A2347A655007D1B60 /* MainViewController.m */,
+				571BEDF32348E98D008051CA /* MainView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		571BEDF42348FBE2008051CA /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				571BEDF823490D6C008051CA /* MainViewFlowLayout */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
+		571BEDF823490D6C008051CA /* MainViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				571BEDF52348FBFB008051CA /* MainViewFlowLayout.h */,
+				571BEDF62348FC0C008051CA /* MainViewFlowLayout.m */,
+			);
+			path = MainViewFlowLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,9 +305,13 @@
 			files = (
 				5706396B2347A655007D1B60 /* MainViewController.m in Sources */,
 				570639762347A656007D1B60 /* main.m in Sources */,
+				571BEDE02348AE90008051CA /* ImageNetworkFetcher.m in Sources */,
 				570639842347A902007D1B60 /* Network.m in Sources */,
 				571BEDDD234895ED008051CA /* ImageDataStorage.m in Sources */,
 				5706398B2347BFD2007D1B60 /* MDImage.m in Sources */,
+				571BEDE62348BB85008051CA /* MainViewPresenter.m in Sources */,
+				571BEDF72348FC0D008051CA /* MainViewFlowLayout.m in Sources */,
+				571BEDEE2348DF1E008051CA /* ImageCell.m in Sources */,
 				570639682347A655007D1B60 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ NSString *const kFilePath = @"imageData";
 
 #pragma mark -Private
 @interface ImageDataStorage()
-@property (strong, nonatomic) NSArray<MDImage *> *images;
+@property (strong, nonatomic) NSMutableArray<MDImage *> *images;
 -(NSString *)filePath;
 @end
 
@@ -21,24 +21,36 @@ NSString *const kFilePath = @"imageData";
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.images = [self getImages];
+        self.images = [[NSMutableArray<MDImage *> alloc] initWithArray:[self getImages]];
     }
     
     return self;
 }
 
 - (NSArray<MDImage *> *)getImages {
-    NSDictionary<NSString *, NSData *> *dictionary = (NSDictionary<NSString *, NSData *> *)[NSKeyedUnarchiver unarchiveObjectWithFile:[self filePath]];
-    NSMutableArray<MDImage *> *images = [NSMutableArray<MDImage *> array];
-    for (NSString *key in dictionary.allKeys) {
-        [images addObject:[MDImage initWithImageUrl:key andImageData:dictionary[key]]];
+    if (self.images) {
+        return self.images;
     }
-    
-    return images;
+    @try {
+        NSArray<MDImage *> *array = (NSArray<MDImage *> *)[NSKeyedUnarchiver unarchiveObjectWithFile:[self filePath]];
+        return array;
+    }
+    @catch (NSException *exception) {
+        @throw exception;
+    }
 }
 
-- (void)saveImages:(NSArray<MDImage *> *)images {
-    [NSKeyedArchiver archiveRootObject:images toFile:[self filePath]];
+- (void)save {
+    [NSKeyedArchiver archiveRootObject:_images toFile:[self filePath]];
+}
+
+- (void)addImage:(MDImage *)image {
+    for (MDImage *savedImage in _images) {
+        if ([savedImage.imageUrl isEqualToString:image.imageUrl]) {
+            return;
+        }
+    }
+    [_images addObject:image];
 }
 
 @end

@@ -13,20 +13,20 @@
 #define kMDImageData @"image_data"
 
 @implementation MDImage
-- (instancetype)initWithImageUrl: (NSString *) imageUrl {
-    self = [super init];
-    if (self) {
-        self.imageUrl = imageUrl;
-    }
-    
-    return self;
-}
 
 - (instancetype)initWithImageUrl:(NSString *)imageUrl andImageData: (NSData *) imageData {
     self = [super init];
     if (self) {
         self.imageUrl = imageUrl;
         self.imageData = imageData;
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithImageUrl:(NSString *)imageUrl {
+    if (self = [super init]) {
+        self.imageUrl = imageUrl;
     }
     
     return self;

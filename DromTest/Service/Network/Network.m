@@ -21,11 +21,17 @@
 
 @implementation Network
 - (void)getRequestWithUrlString:(NSString *)urlString withSuccessCompletion:(SuccessBlock)successBlock withFailedCompletion:(FailedBlock)failedBlock {
-    [self request:HTTPMethodGet withUrlString:urlString withSuccessCompletion:successBlock withFailedCompletion:failedBlock withParameters:nil];
+    
+    
+    [self request:HTTPMethodGet withUrlString:urlString withSuccessCompletion:^(NSData *data){
+        successBlock(data);
+    } withFailedCompletion:^(NSError *error) {
+        failedBlock(error);
+    } withParameters:nil];
 }
 
 - (void)postRequestWithUrlString:(NSString *)urlString withSuccessCompletion:(SuccessBlock)successBlock withBodyParameters:(NSDictionary *)parameters withFailedCompletion:(FailedBlock)failedBlock {
-    [self request:HTTPMethodGet withUrlString:urlString withSuccessCompletion:successBlock withFailedCompletion:failedBlock withParameters:parameters];
+    [self request:HTTPMethodPost withUrlString:urlString withSuccessCompletion:successBlock withFailedCompletion:failedBlock withParameters:parameters];
 }
 
 @end
@@ -64,8 +70,10 @@
     switch (httpMethod) {
         case HTTPMethodGet:
             [self baseRequest:@"GET" withUrlString:urlString withSuccessCompletion:successBlock withFailedCompletion:failedBlock withParameters: parameters];
+            break;
         case HTTPMethodPost:
-            [self baseRequest:@"GET" withUrlString:urlString withSuccessCompletion:successBlock withFailedCompletion:failedBlock withParameters: parameters];
+            [self baseRequest:@"POST" withUrlString:urlString withSuccessCompletion:successBlock withFailedCompletion:failedBlock withParameters: parameters];
+            break;
     }
 }
 @end

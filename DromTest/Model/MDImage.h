@@ -12,8 +12,8 @@
 @property (strong, nonatomic) NSString* imageUrl;
 @property (strong, nonatomic) NSData* imageData;
 
-+ (instancetype)initWithImageUrl: (NSString *) imageUrl;
-+ (instancetype)initWithImageUrl:(NSString *)imageUrl andImageData: (NSData *) imageData;
+- (instancetype)initWithImageUrl:(NSString *)imageUrl andImageData: (NSData *) imageData;
+- (instancetype)initWithImageUrl:(NSString *)imageUrl;
 
 @end
 

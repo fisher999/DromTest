@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +17,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self setupWindowAndController];
     return YES;
+}
+
+- (void)setupWindowAndController {
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    MainViewController *controller = [[MainViewController alloc] init];
+    MainViewPresenter *presenter = [[MainViewPresenter alloc] initWithImageNetworkFetcher:[[ImageNetworkFetcher alloc] init] andView:controller];
+    controller.presenter = presenter;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.window makeKeyAndVisible];
 }
 
 

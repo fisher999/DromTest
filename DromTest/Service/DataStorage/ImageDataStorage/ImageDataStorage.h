@@ -10,6 +10,7 @@
 #import "MDImage.h"
 
 @interface ImageDataStorage : NSObject
--(NSArray<MDImage *> *)getImages;
--(void)saveImages: (NSArray<MDImage *> *) images;
+- (NSArray<MDImage *> *)getImages;
+- (void)save;
+- (void)addImage: (MDImage *) image;
 @end
