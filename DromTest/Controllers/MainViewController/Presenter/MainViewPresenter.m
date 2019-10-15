@@ -86,7 +86,7 @@
 #pragma mark -View methods
 @implementation MainViewPresenter (View)
 
-- (NSInteger)count {
+-(NSInteger)count {
     return self.imagesArray.count;
 }
 

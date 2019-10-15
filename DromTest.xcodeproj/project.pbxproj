@@ -19,6 +19,7 @@
 		571BEDE62348BB85008051CA /* MainViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDE52348BB85008051CA /* MainViewPresenter.m */; };
 		571BEDEE2348DF1E008051CA /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDED2348DF1E008051CA /* ImageCell.m */; };
 		571BEDF72348FC0D008051CA /* MainViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 571BEDF62348FC0C008051CA /* MainViewFlowLayout.m */; };
+		57E6273A23562D98006374FB /* DTGCDConcurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E6273923562D98006374FB /* DTGCDConcurrency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		571BEDF32348E98D008051CA /* MainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		571BEDF52348FBFB008051CA /* MainViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewFlowLayout.h; sourceTree = "<group>"; };
 		571BEDF62348FC0C008051CA /* MainViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewFlowLayout.m; sourceTree = "<group>"; };
+		57E6273823562D84006374FB /* DTGCDConcurrency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTGCDConcurrency.h; sourceTree = "<group>"; };
+		57E6273923562D98006374FB /* DTGCDConcurrency.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTGCDConcurrency.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 		570639802347A8AC007D1B60 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				57E6273723562CBC006374FB /* DTSConcurrency */,
 				571BEDDE2348AE6A008051CA /* ImageNetworkFetcher */,
 				571BEDD6234882B5008051CA /* DataStorage */,
 				570639852347A912007D1B60 /* Network */,
@@ -233,6 +237,15 @@
 			path = MainViewFlowLayout;
 			sourceTree = "<group>";
 		};
+		57E6273723562CBC006374FB /* DTSConcurrency */ = {
+			isa = PBXGroup;
+			children = (
+				57E6273823562D84006374FB /* DTGCDConcurrency.h */,
+				57E6273923562D98006374FB /* DTGCDConcurrency.m */,
+			);
+			path = DTSConcurrency;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +324,7 @@
 				5706398B2347BFD2007D1B60 /* MDImage.m in Sources */,
 				571BEDE62348BB85008051CA /* MainViewPresenter.m in Sources */,
 				571BEDF72348FC0D008051CA /* MainViewFlowLayout.m in Sources */,
+				57E6273A23562D98006374FB /* DTGCDConcurrency.m in Sources */,
 				571BEDEE2348DF1E008051CA /* ImageCell.m in Sources */,
 				570639682347A655007D1B60 /* AppDelegate.m in Sources */,
 			);
